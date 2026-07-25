@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Result</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f2f2f2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+width:320px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+box-sizing:border-box;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#0d6efd;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+}
+
+img{
+width:100%;
+margin-top:20px;
+display:none;
+}
+
+#error{
+color:red;
+margin-top:10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h2>Exam Result</h2>
+
+<input id="user" placeholder="Username">
+
+<input id="pass" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p id="error"></p>
+
+<img id="result" src="result.jpg">
+
+</div>
+
+<script>
+
+function login(){
+
+let u=document.getElementById("user").value;
+let p=document.getElementById("pass").value;
+
+if(u==="GK20230505" && p==="2023050"){
+
+document.getElementById("error").innerHTML="";
+document.getElementById("result").style.display="block";
+
+}else{
+
+document.getElementById("result").style.display="none";
+document.getElementById("error").innerHTML="Invalid Username or Password";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
